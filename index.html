@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Ping Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="pongCanvas" width="800" height="400" aria-label="Jogo de Ping Pong"></canvas>
+        <div id="scoreboard" role="status" aria-live="polite">
+            Pontos Jogador: <span id="playerScore">0</span> - Pontos AI: <span id="aiScore">0</span>
+        </div>
+        <div id="menu" role="navigation">
+            <button id="onePlayerBtn">Modo 1 Jogador</button>
+            <button id="twoPlayersBtn">Modo 2 Jogadores</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
