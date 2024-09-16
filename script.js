@@ -29,7 +29,8 @@ const secondPlayerPaddle = {
     width: paddleWidth,
     height: paddleHeight,
     color: 'blue',  // Raquete azul
-    dy: 5
+    dy: 5,
+    speed: 5 // Velocidade de movimento da IA
 };
 
 // Cria a bola
@@ -115,6 +116,19 @@ function moveSecondPlayerPaddle(event) {
     }
 }
 
+// Função para mover a raquete da IA (modo de 1 jogador)
+function moveAI() {
+    if (ball.y > secondPlayerPaddle.y + secondPlayerPaddle.height / 2) {
+        if (secondPlayerPaddle.y + secondPlayerPaddle.height < canvas.height) {
+            secondPlayerPaddle.y += secondPlayerPaddle.speed;
+        }
+    } else {
+        if (secondPlayerPaddle.y > 0) {
+            secondPlayerPaddle.y -= secondPlayerPaddle.speed;
+        }
+    }
+}
+
 // Função para reiniciar a bola
 function resetBall() {
     ball.x = canvas.width / 2;
@@ -137,7 +151,9 @@ function announcePoint(winner) {
 // Função principal de atualização do jogo
 function update() {
     moveBall();
-    // No modo de dois jogadores, movimenta as duas raquetes
+    if (gameMode === 'one') {
+        moveAI(); // Mova a IA
+    }
 }
 
 // Função para desenhar tudo
