@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <canvas id="pongCanvas" width="800" height="400" aria-label="Jogo de Ping Pong"></canvas>
-        <div id="scoreboard" role="status" aria-live="polite">
-            Pontos Jogador: <span id="playerScore">0</span> - Pontos AI: <span id="aiScore">0</span>
-        </div>
-        <div id="menu" role="navigation">
-            <button id="onePlayerBtn">Modo 1 Jogador</button>
-            <button id="twoPlayersBtn">Modo 2 Jogadores</button>
-        </div>
+    <div id="menu">
+        <h1>Escolha o Modo de Jogo</h1>
+        <button id="onePlayerBtn">1 Jogador</button>
+        <button id="twoPlayersBtn">2 Jogadores</button>
     </div>
-
+    <canvas id="pongCanvas" width="800" height="400" style="display: none;"></canvas>
+    <div id="scoreBoard">
+        <div>Jogador 1 (Vermelho): <span id="playerScore">0</span></div>
+        <div>Jogador 2 (Azul): <span id="secondPlayerScore">0</span></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
